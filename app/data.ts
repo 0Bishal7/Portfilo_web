@@ -10,6 +10,7 @@ export type Project = {
   challenge: string;
   outcome: string;
   liveUrl?: string;
+  ownership: string;
 };
 
 export const projects: Project[] = [
@@ -17,7 +18,8 @@ export const projects: Project[] = [
     slug: "kuberav",
     name: "Kuberav",
     eyebrow: "Flagship · Trading infrastructure",
-    summary: "A unified algorithmic trading platform built for live execution, paper trading, broker integrations, and real-time market workflows.",
+    ownership: "Independent product · Designed and built from scratch",
+    summary: "An independently designed and built-from-scratch algorithmic trading platform for live execution, paper trading, broker integrations, and real-time market workflows.",
     impact: "Real-time, multi-broker trading operations in one production-oriented interface.",
     tags: ["Python", "FastAPI", "PostgreSQL", "WebSockets", "SQLAlchemy"],
     problem: "Traders need to coordinate strategies, orders, positions, and broker-specific workflows across fragmented tools.",
@@ -30,7 +32,8 @@ export const projects: Project[] = [
     slug: "power-school-ai",
     name: "Academicae Schools",
     eyebrow: "AI · School operations",
-    summary: "A school management and assessment platform with dynamic configuration, automated checking, student analytics, and academic workflow automation.",
+    ownership: "Company product · Significant engineering contribution",
+    summary: "A company school-management and assessment product where I contributed dynamic configuration, automated checking, analytics, and academic workflow automation.",
     impact: "Up to 80% grading automation across supported workflows.",
     tags: ["Python", "FastAPI", "PostgreSQL", "Docker"],
     problem: "Teachers lose valuable time to repetitive grading and administrative workflows.",
@@ -43,7 +46,8 @@ export const projects: Project[] = [
     slug: "hello-teacher-ai",
     name: "Hello Teacher AI",
     eyebrow: "AI · Productivity",
-    summary: "An AI education platform with scalable backend APIs, secure authentication, teacher workflows, subject management, and model question generation.",
+    ownership: "Company product · Significant engineering contribution",
+    summary: "A company AI education product where I contributed scalable backend APIs, authentication, teacher workflows, subject management, and model question generation.",
     impact: "Automated high-friction teaching workflows with human review built in.",
     tags: ["Python", "FastAPI", "PostgreSQL", "JWT", "OAuth", "Docker"],
     problem: "Creating differentiated classroom content is important, but relentlessly time-consuming.",
@@ -56,6 +60,7 @@ export const projects: Project[] = [
     slug: "candidmen",
     name: "Candidmen",
     eyebrow: "Platform · Backend",
+    ownership: "Company project · Backend engineering contribution",
     summary: "A scalable backend platform with secure APIs, structured data flows, and production-grade service boundaries.",
     impact: "Reliable application services designed around maintainable domain logic.",
     tags: ["Django", "REST", "MySQL", "Docker"],
