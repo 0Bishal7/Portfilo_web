@@ -34,9 +34,9 @@ export const projects: Project[] = [
     impact: "Up to 80% grading automation across supported workflows.",
     tags: ["Python", "FastAPI", "PostgreSQL", "Docker"],
     problem: "Teachers lose valuable time to repetitive grading and administrative workflows.",
-    solution: "Purpose-built AI services that assist with evaluation and structured academic operations.",
-    challenge: "Making AI output useful, consistent, and safe inside real classroom workflows.",
-    outcome: "Faster feedback loops and more time for educators to focus on students.",
+    solution: "A connected academic workspace for multilingual assignment generation, class operations, automated answer checking, and student progress analytics.",
+    challenge: "Keeping configurable assessment logic, teacher workflows, multiple languages, and student performance data consistent across the platform.",
+    outcome: "Faster assignment creation, clearer classroom operations, and measurable progress visibility for educators.",
     liveUrl: "https://aps.academicae.com/"
   },
   {
