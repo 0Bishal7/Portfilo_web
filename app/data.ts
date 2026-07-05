@@ -9,6 +9,7 @@ export type Project = {
   solution: string;
   challenge: string;
   outcome: string;
+  liveUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -22,19 +23,21 @@ export const projects: Project[] = [
     problem: "Traders need to coordinate strategies, orders, positions, and broker-specific workflows across fragmented tools.",
     solution: "A central trading control plane combining live and paper execution, strategy orchestration, option chains, webhooks, and risk controls.",
     challenge: "Keeping order state, market data, P&L, and broker acknowledgements synchronized under real-time load.",
-    outcome: "A modular, observable foundation designed to grow from personal strategies into production trading infrastructure."
+    outcome: "A modular, observable foundation designed to grow from personal strategies into production trading infrastructure.",
+    liveUrl: "https://kuberav.com/"
   },
   {
     slug: "power-school-ai",
-    name: "Power School AI",
-    eyebrow: "AI · Education",
+    name: "Academicae Schools",
+    eyebrow: "AI · School operations",
     summary: "AI-assisted academic workflows that reduce repetitive work for educators and make feedback dramatically faster.",
     impact: "Up to 80% grading automation across supported workflows.",
     tags: ["Python", "FastAPI", "AI", "PostgreSQL"],
     problem: "Teachers lose valuable time to repetitive grading and administrative workflows.",
     solution: "Purpose-built AI services that assist with evaluation and structured academic operations.",
     challenge: "Making AI output useful, consistent, and safe inside real classroom workflows.",
-    outcome: "Faster feedback loops and more time for educators to focus on students."
+    outcome: "Faster feedback loops and more time for educators to focus on students.",
+    liveUrl: "https://aps.academicae.com/"
   },
   {
     slug: "hello-teacher-ai",
@@ -46,7 +49,8 @@ export const projects: Project[] = [
     problem: "Creating differentiated classroom content is important, but relentlessly time-consuming.",
     solution: "A focused AI assistant that turns teacher intent into reusable educational artifacts.",
     challenge: "Balancing speed with tone, curriculum context, and educator control.",
-    outcome: "A practical AI workflow that supports teachers without replacing their judgment."
+    outcome: "A practical AI workflow that supports teachers without replacing their judgment.",
+    liveUrl: "https://hello-teacher.ai/"
   },
   {
     slug: "candidmen",
