@@ -63,14 +63,14 @@ const achievements = [
 
 const kuberavFeatures = [
   "Live market watch and broker orders", "Paper and live trading modes", "Options and strategy trading",
-  "Stop-loss, targets, and trailing exits", "Advanced charts and option chain", "Webhook automation",
+  "Candle-wise trailing stop-loss", "Live target and SL chart overlays", "Webhook automation",
   "Partial and complete position exits", "Real-time WebSocket updates", "Secure broker-token management"
 ];
 
 const kuberavScreens = [
-  { src: "/projects/kuberav/market-chart.png", title: "Live market chart", copy: "Real-time NIFTY charting with technical indicators and market watch." },
-  { src: "/projects/kuberav/automated-trade.png", title: "Automated trade execution", copy: "Paper-trade automation with entry, stop-loss, target, and live status overlays." },
-  { src: "/projects/kuberav/strategy-dashboard.png", title: "Strategy control dashboard", copy: "Multi-index strategy configuration, risk metrics, and active position management." }
+  { src: "/projects/kuberav/live-target-trailing-sl.png", width: 2901, height: 1743, title: "Live targets and trailing SL", copy: "Entry, armed level, live target, and stop-loss are plotted directly on the live market chart." },
+  { src: "/projects/kuberav/entry-exit-management.png", width: 2925, height: 1655, title: "Entry and exit management", copy: "Manage entries, partial exits, complete exits, targets, trailing SL, and live P&L from one strategy console." },
+  { src: "/projects/kuberav/candle-wise-trailing.png", width: 2891, height: 1714, title: "Candle-wise trailing on live markets", copy: "Candle-aware trailing stop logic across timeframes with clear live entry, target, SL, and exit visualization." }
 ];
 
 function Arrow() { return <span aria-hidden="true">↗</span>; }
@@ -155,7 +155,7 @@ export default function Home() {
       <SectionHeading eyebrow="KUBERAV CASE STUDY" title="A trading control plane built for reality." copy="A personal algorithmic trading platform bringing live data, execution, automation, and risk controls into one dashboard."/>
       <div className="case-layout"><div className="case-copy"><div className="case-block"><span>01 / PROBLEM</span><h3>Fragmented trading workflows.</h3><p>Traders need a centralized platform to manage live market data, broker orders, positions, automated strategies, and risk from one dashboard.</p></div><div className="case-block"><span>02 / SOLUTION</span><h3>One real-time operating layer.</h3><p>Kuberav combines live market watch, order execution, paper trading, strategy automation, WebSocket updates, broker integration, and admin controls.</p></div><div className="case-result"><b>RESULT</b><p>A production-style platform demonstrating real-time backend engineering, API integration, authentication, order management, and automation logic.</p></div><div className="project-links"><a className="button primary" href="https://kuberav.com/" target="_blank" rel="noreferrer">Visit Kuberav <Arrow/></a><Link className="button ghost" href="/projects/kuberav">View Full Case Study</Link></div></div>
       <div className="case-architecture"><div className="architecture-stack">{["Frontend Dashboard", "FastAPI Backend", "PostgreSQL Database", "Broker API Integration", "Trading Engine", "WebSocket Updates"].map((item, index) => <div key={item}><span>0{index + 1}</span><b>{item}</b>{index < 5 && <i>↓</i>}</div>)}</div><div className="case-features">{kuberavFeatures.map(feature => <span key={feature}><i>✓</i>{feature}</span>)}</div></div></div>
-      <div className="product-gallery"><div className="gallery-heading"><span>PRODUCT GALLERY</span><h3>Kuberav in production.</h3><p>Live charting, automated execution, and strategy management from the working platform.</p></div><div className="gallery-grid">{kuberavScreens.map((screen, index) => <figure className={index === 0 ? "gallery-featured" : ""} key={screen.src}><div><Image src={screen.src} alt={`${screen.title} in Kuberav`} width={2940} height={1912} sizes={index === 0 ? "(max-width: 760px) 100vw, 66vw" : "(max-width: 760px) 100vw, 33vw"}/></div><figcaption><b>{screen.title}</b><span>{screen.copy}</span></figcaption></figure>)}</div></div>
+      <div className="product-gallery"><div className="gallery-heading"><span>LIVE RISK AUTOMATION</span><h3>Targets, trailing SL, and exits—on the chart.</h3><p>Candle-wise trailing and precise entry/exit management designed for live market workflows.</p></div><div className="gallery-grid">{kuberavScreens.map((screen, index) => <figure className={index === 0 ? "gallery-featured" : ""} key={screen.src}><div><Image src={screen.src} alt={`${screen.title} in Kuberav`} width={screen.width} height={screen.height} sizes={index === 0 ? "(max-width: 760px) 100vw, 66vw" : "(max-width: 760px) 100vw, 33vw"}/></div><figcaption><b>{screen.title}</b><span>{screen.copy}</span></figcaption></figure>)}</div></div>
     </div></section>
 
     <section className="brief-section shell" id="skills">

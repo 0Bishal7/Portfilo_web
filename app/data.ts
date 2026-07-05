@@ -21,8 +21,8 @@ export const projects: Project[] = [
     impact: "Real-time, multi-broker trading operations in one production-oriented interface.",
     tags: ["Python", "FastAPI", "PostgreSQL", "WebSockets", "SQLAlchemy"],
     problem: "Traders need to coordinate strategies, orders, positions, and broker-specific workflows across fragmented tools.",
-    solution: "A central trading control plane combining live and paper execution, strategy orchestration, option chains, webhooks, and risk controls.",
-    challenge: "Keeping order state, market data, P&L, and broker acknowledgements synchronized under real-time load.",
+    solution: "A central trading control plane combining live and paper execution, candle-wise trailing stop-loss, live target and SL overlays, partial and complete exits, option chains, webhooks, and risk controls.",
+    challenge: "Keeping entries, targets, trailing stop-loss levels, exits, market data, P&L, and broker acknowledgements synchronized under real-time load.",
     outcome: "A modular, observable foundation designed to grow from personal strategies into production trading infrastructure.",
     liveUrl: "https://kuberav.com/"
   },
