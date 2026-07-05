@@ -79,6 +79,12 @@ const academicaeScreens = [
   { src: "/projects/academicae/student-progress.png", width: 2907, height: 1762, title: "Student progress analytics", copy: "Subject-level progress, assessment completion, assignment activity, and performance insights." }
 ];
 
+const helloTeacherScreens = [
+  { src: "/projects/hello-teacher/student-dashboard.png", width: 2902, height: 1752, title: "Student learning dashboard", copy: "A digital bookshelf, study planner, progress tracking, assignments, achievements, and daily learning streaks." },
+  { src: "/projects/hello-teacher/interactive-classroom.png", width: 2940, height: 1751, title: "Interactive classroom content", copy: "Chapter-based visual lessons with presentation controls, section navigation, playback, and focused teaching mode." },
+  { src: "/projects/hello-teacher/ai-learning-check.png", width: 2888, height: 1737, title: "AI learning checks", copy: "Interactive chapter assessments with generated questions, progress tracking, answer choices, and guided practice." }
+];
+
 function Arrow() { return <span aria-hidden="true">↗</span>; }
 
 function SectionHeading({ eyebrow, title, copy }: { eyebrow: string; title: string; copy?: string }) {
@@ -152,7 +158,7 @@ export default function Home() {
     <section className="brief-section shell" id="projects">
       <SectionHeading eyebrow="FEATURED PROJECTS" title="Live products. Real constraints." copy="Production-oriented systems spanning trading infrastructure, AI education, and academic operations."/>
       <div className="featured-grid">{orderedProjects.map((project, index) => <motion.article className={`featured-card project-tone-${index + 1}`} key={project.slug} whileHover={{ y: -6 }}>
-        <div className={`project-preview ${index === 0 || index === 2 ? "has-product-image" : ""}`}>{index === 0 && <Image src={kuberavScreens[0].src} alt="Kuberav live market chart interface" fill sizes="(max-width: 760px) 100vw, 33vw"/>}{index === 2 && <Image src={academicaeScreens[1].src} alt="Academicae Schools teacher dashboard" fill sizes="(max-width: 760px) 100vw, 33vw"/>}<div className="preview-top"><span>0{index + 1}</span><b>LIVE PRODUCT</b></div>{index === 1 && <><div className="preview-mark">{project.name.split(" ").map(word => word[0]).join("")}</div><div className="preview-lines"><i/><i/><i/></div></>}</div>
+        <div className="project-preview has-product-image">{index === 0 && <Image src={kuberavScreens[0].src} alt="Kuberav live market chart interface" fill sizes="(max-width: 760px) 100vw, 33vw"/>}{index === 1 && <Image src={helloTeacherScreens[0].src} alt="Hello Teacher AI student learning dashboard" fill sizes="(max-width: 760px) 100vw, 33vw"/>}{index === 2 && <Image src={academicaeScreens[1].src} alt="Academicae Schools teacher dashboard" fill sizes="(max-width: 760px) 100vw, 33vw"/>}<div className="preview-top"><span>0{index + 1}</span><b>LIVE PRODUCT</b></div></div>
         <span className="project-eyebrow">{project.eyebrow}</span><h3>{project.name}</h3><p>{project.summary}</p><div className="tag-list">{project.tags.slice(0, 4).map(tag => <span key={tag}>{tag}</span>)}</div><div className="card-actions"><a href={project.liveUrl} target="_blank" rel="noreferrer">Visit Website <Arrow/></a><Link href={`/projects/${project.slug}`}>Case Study <Arrow/></Link></div>
       </motion.article>)}</div>
     </section>

@@ -47,9 +47,9 @@ export const projects: Project[] = [
     impact: "Automated high-friction teaching workflows with human review built in.",
     tags: ["Python", "FastAPI", "PostgreSQL", "JWT", "OAuth", "Docker"],
     problem: "Creating differentiated classroom content is important, but relentlessly time-consuming.",
-    solution: "A focused AI assistant that turns teacher intent into reusable educational artifacts.",
-    challenge: "Balancing speed with tone, curriculum context, and educator control.",
-    outcome: "A practical AI workflow that supports teachers without replacing their judgment.",
+    solution: "A connected learning platform combining digital books, interactive classroom content, study planning, teacher assignments, and AI-generated learning checks.",
+    challenge: "Delivering curriculum-aware content, scalable APIs, secure access, and responsive learning interactions across student and teacher workflows.",
+    outcome: "A practical AI-assisted learning experience that connects content discovery, focused lessons, assessments, and progress tracking.",
     liveUrl: "https://hello-teacher.ai/"
   },
   {

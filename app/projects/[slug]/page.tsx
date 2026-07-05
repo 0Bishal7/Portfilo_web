@@ -17,6 +17,12 @@ const academicaeScreens = [
   { src: "/projects/academicae/student-progress.png", width: 2907, height: 1762, title: "Student progress analytics", copy: "Subject-level progress, assessment completion, and assignment performance insights." }
 ];
 
+const helloTeacherScreens = [
+  { src: "/projects/hello-teacher/student-dashboard.png", width: 2902, height: 1752, title: "Student learning dashboard", copy: "Digital books, study planning, progress, assignments, achievements, and learning streaks." },
+  { src: "/projects/hello-teacher/interactive-classroom.png", width: 2940, height: 1751, title: "Interactive classroom content", copy: "Visual chapter lessons with section navigation, playback, and focused teaching controls." },
+  { src: "/projects/hello-teacher/ai-learning-check.png", width: 2888, height: 1737, title: "AI learning checks", copy: "Generated chapter assessments with progress tracking, answer choices, and guided practice." }
+];
+
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const project = projects.find((item) => item.slug === slug);
@@ -29,6 +35,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     <section className="case-body shell"><aside><span>CASE STUDY</span><a href="#problem">01 · Problem</a><a href="#solution">02 · Solution</a><a href="#challenge">03 · Challenge</a><a href="#outcome">04 · Outcome</a></aside><div><article id="problem"><span>01 / PROBLEM</span><h2>The context.</h2><p>{project.problem}</p></article><article id="solution"><span>02 / SOLUTION</span><h2>The product response.</h2><p>{project.solution}</p></article><article id="challenge"><span>03 / ENGINEERING CHALLENGE</span><h2>Where the real work lived.</h2><p>{project.challenge}</p></article><article id="outcome"><span>04 / OUTCOME</span><h2>What changed.</h2><p>{project.outcome}</p></article></div></section>
     {project.slug === "kuberav" && <section className="case-screens shell"><span>LIVE RISK AUTOMATION</span><h2>Candle-wise trailing, targets, and exits.</h2><div>{kuberavScreens.map((screen, index) => <figure className={index === 0 ? "featured" : ""} key={screen.src}><div><Image src={screen.src} alt={`${screen.title} in Kuberav`} width={screen.width} height={screen.height}/></div><figcaption><b>{screen.title}</b><span>{screen.copy}</span></figcaption></figure>)}</div></section>}
     {project.slug === "power-school-ai" && <section className="case-screens shell"><span>ACADEMIC WORKFLOWS</span><h2>Assignments, classrooms, and progress—connected.</h2><div>{academicaeScreens.map((screen, index) => <figure className={index === 0 ? "featured" : ""} key={screen.src}><div><Image src={screen.src} alt={`${screen.title} in Academicae Schools`} width={screen.width} height={screen.height}/></div><figcaption><b>{screen.title}</b><span>{screen.copy}</span></figcaption></figure>)}</div></section>}
+    {project.slug === "hello-teacher-ai" && <section className="case-screens shell"><span>AI-ASSISTED LEARNING</span><h2>Books, classroom content, and learning checks.</h2><div>{helloTeacherScreens.map((screen, index) => <figure className={index === 0 ? "featured" : ""} key={screen.src}><div><Image src={screen.src} alt={`${screen.title} in Hello Teacher AI`} width={screen.width} height={screen.height}/></div><figcaption><b>{screen.title}</b><span>{screen.copy}</span></figcaption></figure>)}</div></section>}
     <section className="case-next shell"><span>NEXT PROJECT</span><Link href={`/projects/${next.slug}`}>{next.name} <b>↗</b></Link></section>
   </main>;
 }
