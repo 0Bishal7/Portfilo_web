@@ -1,144 +1,176 @@
 "use client";
 
 import Link from "next/link";
-import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
-import { useEffect, useMemo, useState } from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
+import { FormEvent, useState } from "react";
 import { projects } from "./data";
 
-const skills = {
-  Backend: ["Python", "FastAPI", "Django", "Flask", "REST APIs", "JWT", "OAuth"],
-  Data: ["PostgreSQL", "MySQL", "Redis", "SQLAlchemy"],
-  DevOps: ["Docker", "AWS", "Linux", "CI/CD", "Git"],
-  AI: ["TensorFlow", "PyTorch", "Pandas", "NumPy"],
-};
-
-const ticks = [
-  ["NIFTY 50", "24,323.85", "+0.68%"],
-  ["BANKNIFTY", "52,342.10", "+1.12%"],
-  ["SENSEX", "79,996.60", "+0.54%"],
+const experience = [
+  {
+    period: "JAN 2024 - PRESENT",
+    role: "Senior Software Engineer",
+    company: "Informaticae Technology Pvt. Ltd.",
+    location: "Kolkata, India",
+    points: [
+      "Built AI-driven teacher modules for assignment generation and academic workflow automation.",
+      "Reduced manual preparation effort by 85% and automated answer checking and student analytics.",
+      "Built multilingual, multi-difficulty assessment configuration with weighted scoring logic.",
+      "Mentored junior developers and improved delivery quality through reviews and optimization."
+    ]
+  },
+  {
+    period: "AUG 2023 - DEC 2024",
+    role: "Software Engineer",
+    company: "Informaticae Technology Pvt. Ltd.",
+    location: "Kolkata, India",
+    points: [
+      "Built scalable FastAPI services for Hello Teacher AI.",
+      "Implemented secure JWT and OAuth authentication and authorization.",
+      "Optimized SQL queries, indexing, and caching to improve API response time by 50%.",
+      "Worked with Docker and CI/CD pipelines for reliable deployment and testing."
+    ]
+  },
+  {
+    period: "MAR 2023 - AUG 2023",
+    role: "Backend Developer Intern",
+    company: "Runtime Solutions",
+    location: "Kolkata, India",
+    points: [
+      "Built scalable web applications using Django and Flask.",
+      "Designed optimized relational database schemas and backend workflows.",
+      "Implemented Redis caching for faster application response times."
+    ]
+  }
 ];
 
-function ArrowIcon() {
-  return <span aria-hidden="true">↗</span>;
-}
+const skillGroups = [
+  ["Backend", ["Python", "FastAPI", "Django", "Flask", "REST APIs", "WebSockets"]],
+  ["Database", ["PostgreSQL", "SQLAlchemy", "SQL", "Redis"]],
+  ["Authentication", ["JWT", "OAuth", "Secure Login", "Role-Based Access"]],
+  ["DevOps", ["Docker", "Git", "AWS", "Linux", "CI/CD"]],
+  ["Frontend", ["HTML", "CSS", "JavaScript", "React"]],
+  ["AI & Data", ["Pandas", "NumPy", "TensorFlow", "PyTorch", "Matplotlib"]]
+] as const;
 
-function Terminal({ close }: { close: () => void }) {
-  const [command, setCommand] = useState("");
-  const [history, setHistory] = useState<string[]>([
-    "$ whoami", "Bishal Roy — Senior Python Backend Engineer", "$ status", "Available for ambitious product engineering work."
-  ]);
-  const answers: Record<string, string> = {
-    help: "Commands: whoami, skills, projects, contact, clear",
-    whoami: "Bishal Roy — Senior Python Backend Engineer",
-    skills: "Python · FastAPI · PostgreSQL · Docker · AI · WebSockets",
-    projects: "Kuberav · Academicae Schools · Hello Teacher AI · Candidmen",
-    contact: "Use the contact panel below — let's build something useful.",
-  };
-  const submit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const cmd = command.trim().toLowerCase();
-    if (!cmd) return;
-    setHistory(cmd === "clear" ? [] : [...history, `$ ${cmd}`, answers[cmd] || `Command not found: ${cmd}. Try “help”.`]);
-    setCommand("");
-  };
-  return (
-    <motion.div className="terminal-wrap" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onMouseDown={close}>
-      <motion.div className="terminal" initial={{ scale: .92, y: 30 }} animate={{ scale: 1, y: 0 }} exit={{ scale: .95, y: 20 }} onMouseDown={(e) => e.stopPropagation()}>
-        <div className="terminal-bar"><div><i/><i/><i/></div><span>bishal@production: ~</span><button onClick={close} aria-label="Close terminal">×</button></div>
-        <div className="terminal-body" onClick={() => document.getElementById("terminal-input")?.focus()}>
-          {history.map((line, i) => <p className={line.startsWith("$") ? "prompt" : ""} key={i}>{line}</p>)}
-          <form onSubmit={submit}><span>$</span><input id="terminal-input" autoFocus value={command} onChange={(e) => setCommand(e.target.value)} aria-label="Terminal command" autoComplete="off" /></form>
-        </div>
-      </motion.div>
-    </motion.div>
-  );
-}
+const achievements = [
+  ["85%", "Manual preparation effort reduced"],
+  ["80%", "Grading time reduced"],
+  ["50%", "API response time improved"],
+  ["3+", "Years building production software"],
+  ["LIVE", "AI and trading platform experience"]
+];
 
-function TradingPanel() {
-  const candles = useMemo(() => [34,52,38,69,58,83,74,91,61,79,96,88,106,92,118,128,109,135,124,148,141,159,151,170], []);
-  return (
-    <div className="trading-panel">
-      <div className="panel-top"><div><span className="brand-mark">K</span><b>Kuberav</b><small>Trading OS</small></div><div className="live"><i/> WEBSOCKET LIVE</div></div>
-      <div className="markets">{ticks.map((t) => <div key={t[0]}><small>{t[0]}</small><b>{t[1]}</b><span>{t[2]}</span></div>)}</div>
-      <div className="chart-head"><div><small>NIFTY 50 · 1m</small><strong>24,323.85</strong></div><div className="chart-tabs"><span>1m</span><span>5m</span><span>1h</span></div></div>
-      <div className="chart" aria-label="Animated market chart demonstration">
-        <div className="chart-grid" />
-        <svg viewBox="0 0 480 180" preserveAspectRatio="none" role="img"><defs><linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#3b82f6" stopOpacity=".35"/><stop offset="100%" stopColor="#3b82f6" stopOpacity="0"/></linearGradient></defs><path className="area" d={`M 0 160 ${candles.map((n,i)=>`L ${i*21} ${180-n}`).join(" ")} L 480 180 Z`}/><path className="line" d={`M 0 146 ${candles.map((n,i)=>`L ${i*21} ${180-n}`).join(" ")}`}/></svg>
-        <div className="chart-price">24,323.85</div>
-      </div>
-      <div className="positions"><div><small>POSITION</small><small>QTY</small><small>AVG</small><small>P&amp;L</small></div><div><b>NIFTY 04JUL 24300 CE</b><span>50</span><span>₹118.40</span><strong>+₹4,280</strong></div></div>
-      <div className="trade-actions"><button>BUY</button><button>SELL</button><div><small>Broker</small><b><i/> Connected</b></div></div>
-    </div>
-  );
-}
+const kuberavFeatures = [
+  "Live market watch and broker orders", "Paper and live trading modes", "Options and strategy trading",
+  "Stop-loss, targets, and trailing exits", "Advanced charts and option chain", "Webhook automation",
+  "Partial and complete position exits", "Real-time WebSocket updates", "Secure broker-token management"
+];
 
-function SectionTitle({ tag, children, copy }: { tag: string; children: React.ReactNode; copy?: string }) {
-  return <div className="section-title"><div><span>{tag}</span><h2>{children}</h2></div>{copy && <p>{copy}</p>}</div>;
+function Arrow() { return <span aria-hidden="true">↗</span>; }
+
+function SectionHeading({ eyebrow, title, copy }: { eyebrow: string; title: string; copy?: string }) {
+  return <div className="brief-heading"><div><span>{eyebrow}</span><h2>{title}</h2></div>{copy && <p>{copy}</p>}</div>;
 }
 
 export default function Home() {
-  const [terminal, setTerminal] = useState(false);
   const [mobileNav, setMobileNav] = useState(false);
-  const [typed, setTyped] = useState(0);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 110, damping: 28, restDelta: 0.001 });
-  const phrases = ["scalable backend systems.", "AI-powered platforms.", "real-time trading infrastructure."];
-  useEffect(() => { const id = setInterval(() => setTyped((n) => (n + 1) % phrases.length), 2600); return () => clearInterval(id); }, [phrases.length]);
+  const orderedProjects = ["kuberav", "hello-teacher-ai", "power-school-ai"].map(slug => projects.find(project => project.slug === slug)!);
 
-  return (
-    <main>
-      <motion.div className="scroll-progress" style={{ scaleX }} />
-      <nav className="nav shell" aria-label="Main navigation">
-        <a className="logo" href="#top"><span>BR</span><div>Bishal Roy<small>Backend Systems Engineer</small></div></a>
-        <button className="menu" onClick={() => setMobileNav(!mobileNav)} aria-label="Toggle navigation">{mobileNav ? "×" : "☰"}</button>
-        <div className={`nav-links ${mobileNav ? "open" : ""}`} onClick={() => setMobileNav(false)}><a href="#about">About</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div>
-        <button className="console-button" onClick={() => setTerminal(true)}><span>›_</span> Open console</button>
-      </nav>
+  const sendMessage = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const subject = encodeURIComponent(`Portfolio enquiry from ${data.get("name") || "a visitor"}`);
+    const body = encodeURIComponent(`${data.get("message") || ""}\n\nFrom: ${data.get("email") || ""}`);
+    window.location.href = `mailto:roybishal200189@gmail.com?subject=${subject}&body=${body}`;
+  };
 
-      <section className="hero shell" id="top">
-        <div className="hero-glow"/><div className="noise"/>
-        <motion.div className="hero-copy" initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7 }}>
-          <div className="availability"><i/> Available for product engineering roles</div>
-          <div className="hero-kicker">BACKEND SYSTEMS · AI PRODUCTS · REAL-TIME INFRASTRUCTURE</div>
-          <p className="hello">Hi, I’m Bishal Roy.</p>
-          <h1>I engineer the systems<br/>behind <em>great products.</em></h1>
-          <p className="lead">Senior Python Backend Engineer building secure APIs, intelligent platforms, and real-time infrastructure that stays fast when things get serious.</p>
-          <div className="typing"><span>Currently building</span><AnimatePresence mode="wait"><motion.b key={typed} initial={{ y: 14, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -14, opacity: 0 }}>{phrases[typed]}</motion.b></AnimatePresence></div>
-          <div className="hero-actions"><a className="button primary" href="#work">Explore my work <ArrowIcon/></a><a className="button ghost" href="#contact">Start a conversation</a></div>
-          <div className="hero-links"><a href="https://github.com/0Bishal7" target="_blank" rel="noreferrer">GitHub <ArrowIcon/></a><a href="#contact">LinkedIn <ArrowIcon/></a><a href="#contact">Résumé <ArrowIcon/></a></div>
-        </motion.div>
-        <motion.div className="hero-visual" initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: .2, duration: .8 }}>
-          <div className="system-card"><div className="system-head"><span><i/> PRODUCTION</span><small>System overview</small></div><div className="python-core"><div className="orbit orbit-one"><i/><i/><i/></div><div className="orbit orbit-two"><i/><i/></div><div className="python-logo">Py<small>THON</small></div></div><div className="service-row"><span>API Gateway<small>12ms</small></span><span>FastAPI<small>Healthy</small></span><span>Postgres<small>8 conns</small></span></div></div>
-          <div className="float-card card-api"><span>API THROUGHPUT</span><b>2.4k <small>req/s</small></b><i>+18.2%</i></div>
-          <div className="float-card card-uptime"><span>UPTIME</span><b>99.98%</b><div><i/><i/><i/><i/><i/><i/><i/></div></div>
-        </motion.div>
-      </section>
+  return <main>
+    <motion.div className="scroll-progress" style={{ scaleX }} />
 
-      <section className="stats shell" aria-label="Career highlights"><div><b>3+</b><span>Years shipping<br/>production software</span></div><div><b>20+</b><span>Production APIs<br/>designed &amp; delivered</span></div><div><b>85%</b><span>Manual workflow<br/>automation</span></div><div><b>50%</b><span>API performance<br/>improvement</span></div></section>
+    <nav className="nav shell brief-nav" aria-label="Main navigation">
+      <a className="logo" href="#home"><span>BR</span><div>Bishal Roy<small>Senior Software Engineer</small></div></a>
+      <button className="menu" onClick={() => setMobileNav(!mobileNav)} aria-label="Toggle navigation">{mobileNav ? "×" : "☰"}</button>
+      <div className={`nav-links ${mobileNav ? "open" : ""}`} onClick={() => setMobileNav(false)}>
+        <a href="#home">Home</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+      </div>
+      <a className="button primary nav-resume" href="/Bishal-Roy-Resume.pdf" download>Download Resume</a>
+    </nav>
 
-      <section className="section shell" id="about">
-        <SectionTitle tag="01 / PROFILE" copy="I work where backend engineering, product thinking, and difficult real-world constraints meet.">Built for the work<br/>behind the interface.</SectionTitle>
-        <div className="about-grid"><div className="manifesto"><p>I don’t just connect endpoints. I design the service boundaries, data flows, failure modes, and feedback loops that make a product dependable.</p><p>From AI education platforms to live trading infrastructure, I turn complicated workflows into systems teams can understand, operate, and grow.</p><div className="principles"><span>01<small>Measure before optimizing</small></span><span>02<small>Design for failure</small></span><span>03<small>Ship useful systems</small></span></div></div><div className="timeline"><div><b>2019</b><span>Started B.Tech</span></div><div><b>2023</b><span>Backend Developer</span></div><div><b>2024</b><span>Software Engineer</span></div><div className="active"><b>NOW</b><span>Senior Software Engineer<small>Building AI systems &amp; trading infrastructure</small></span></div><div><b>NEXT</b><span>Product Engineering Role</span></div></div></div>
-      </section>
+    <section className="brief-hero shell" id="home">
+      <motion.div className="brief-hero-copy" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .65 }}>
+        <div className="availability"><i/> Available for product engineering roles</div>
+        <p className="hero-intro">Hi, I&apos;m Bishal Roy</p>
+        <h1>Senior Software Engineer<br/><em>building systems that scale.</em></h1>
+        <div className="hero-stack">Python <i/> FastAPI <i/> Django <i/> AI Platforms <i/> Real-Time Trading</div>
+        <p className="lead">I build scalable backend systems, AI-powered platforms, and real-time web applications using Python, FastAPI, PostgreSQL, WebSockets, Docker, and cloud-ready architecture.</p>
+        <div className="hero-actions"><a className="button primary" href="#projects">View Projects <Arrow/></a><a className="button ghost" href="/Bishal-Roy-Resume.pdf" download>Download Resume</a><a className="button text-button" href="#contact">Contact Me</a></div>
+      </motion.div>
+      <motion.div className="saas-visual" initial={{ opacity: 0, x: 28 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: .15, duration: .75 }}>
+        <div className="visual-glow"/>
+        <div className="dashboard-window">
+          <div className="dashboard-bar"><span><i/><i/><i/></span><small>production.system</small><b>● LIVE</b></div>
+          <div className="dashboard-body">
+            <div className="api-map"><div className="core-node">Py<small>FASTAPI CORE</small></div><span className="node node-one">API<small>12ms</small></span><span className="node node-two">DB<small>PostgreSQL</small></span><span className="node node-three">WS<small>Real-time</small></span><i/><i/><i/></div>
+            <div className="dashboard-metrics"><span><small>Requests</small><b>2.4k/s</b></span><span><small>Uptime</small><b>99.98%</b></span><span><small>Latency</small><b>12ms</b></span></div>
+          </div>
+        </div>
+        <div className="metric-float float-experience"><b>3+</b><span>Years experience</span></div>
+        <div className="metric-float float-impact"><b>85%</b><span>Manual work reduced</span></div>
+        <div className="metric-float float-speed"><b>50%</b><span>Faster APIs</span></div>
+      </motion.div>
+    </section>
 
-      <section className="section shell skills-section">
-        <SectionTitle tag="02 / CAPABILITIES" copy="A pragmatic toolkit for taking products from a blank repository to observable production software.">Technology is the tool.<br/>Outcomes are the point.</SectionTitle>
-        <div className="skill-grid">{Object.entries(skills).map(([group, items], index) => <motion.div className="skill-card" key={group} whileHover={{ y: -6 }}><div><span>0{index+1}</span><b>{group}</b></div><div>{items.map(item => <span key={item}>{item}</span>)}</div></motion.div>)}</div>
-      </section>
+    <section className="logo-strip shell" aria-label="Core expertise"><span>PYTHON</span><span>FASTAPI</span><span>DJANGO</span><span>POSTGRESQL</span><span>DOCKER</span><span>WEBSOCKETS</span></section>
 
-      <section className="section work-section" id="work"><div className="shell"><SectionTitle tag="03 / FEATURED SYSTEM" copy="Not a concept screen: a live product designed around real execution flows.">Meet Kuberav.<br/>A trading operating system.</SectionTitle><div className="kuberav"><div className="kuberav-copy"><div className="project-index">FLAGSHIP PROJECT · LIVE PRODUCT</div><h3>Trade with clarity.<br/><em>Engineer for reality.</em></h3><p>Kuberav unifies broker connectivity, strategy execution, live market data, and risk-aware order management behind one fast control plane.</p><div className="feature-list">{["Live & paper trading", "Multi-broker integration", "Strategy engine", "WebSocket market data", "Option chain", "Trailing stop-loss", "Webhook automation", "Position dashboard"].map(f=><span key={f}><i>✓</i>{f}</span>)}</div><div className="tag-list">{projects[0].tags.map(t=><span key={t}>{t}</span>)}</div><div className="project-links"><a className="button primary" href={projects[0].liveUrl} target="_blank" rel="noreferrer">Visit Kuberav <ArrowIcon/></a><Link className="text-link" href="/projects/kuberav">Engineering case study <ArrowIcon/></Link></div></div><TradingPanel/></div></div></section>
+    <section className="brief-section shell" id="about">
+      <SectionHeading eyebrow="ABOUT ME" title="Backend depth. Product perspective." copy="I work where dependable architecture, automation, and useful product experiences meet."/>
+      <div className="about-panel"><div><p className="about-lead">I am a Python Backend and Full-Stack Developer with 3+ years of experience building scalable APIs, AI-driven education platforms, automation systems, and real-time trading applications.</p><p>My work focuses on backend architecture, FastAPI, Django, REST APIs, WebSockets, PostgreSQL, authentication, performance optimization, and production-ready software development.</p><p>I have worked on platforms like <a href="https://hello-teacher.ai/" target="_blank" rel="noreferrer">Hello Teacher AI</a> and <a href="https://aps.academicae.com/" target="_blank" rel="noreferrer">Academicae Schools</a>, and built <a href="https://kuberav.com/" target="_blank" rel="noreferrer">Kuberav</a>, my algorithmic trading platform.</p></div><div className="about-values"><span><b>01</b>Design for reliability</span><span><b>02</b>Measure before optimizing</span><span><b>03</b>Keep complexity understandable</span><span><b>04</b>Ship meaningful outcomes</span></div></div>
+    </section>
 
-      <section className="section shell architecture"><SectionTitle tag="04 / ARCHITECTURE" copy="Clear boundaries make fast systems safer to change.">A system you can<br/>reason about.</SectionTitle><div className="arch-flow">{[["01","Client","Dashboard · Mobile"],["02","API Gateway","Auth · Rate limits"],["03","FastAPI Core","REST · WebSockets"],["04","Trading Engine","Strategies · Risk"],["05","Broker Layer","Adapters · Webhooks"],["06","Market","Exchange · Feeds"]].map((n,i)=><div className={i===2||i===3?"accent":""} key={n[0]}><small>{n[0]}</small><b>{n[1]}</b><span>{n[2]}</span>{i<5&&<i>→</i>}</div>)}</div><div className="arch-foot"><span><i/> Event-driven updates</span><span><i/> JWT + scoped access</span><span><i/> Durable order state</span><span><i/> Observable services</span></div></section>
+    <section className="brief-section section-tint" id="experience"><div className="shell">
+      <SectionHeading eyebrow="EXPERIENCE" title="Growing ownership. Measurable impact." copy="From backend implementation to system architecture, optimization, and engineering leadership."/>
+      <div className="experience-timeline">{experience.map((item, index) => <motion.article className="role-card" key={`${item.role}-${item.period}`} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }}>
+        <div className="role-marker"><span>0{index + 1}</span></div><div className="role-meta"><span>{item.period}</span><h3>{item.role}</h3><b>{item.company}</b><small>{item.location}</small></div><ul>{item.points.map(point => <li key={point}>{point}</li>)}</ul>
+      </motion.article>)}</div>
+    </div></section>
 
-      <section className="section shell" id="experience"><SectionTitle tag="05 / EXPERIENCE" copy="Each step added a new layer: implementation, ownership, architecture, and measurable product impact.">Growing scope.<br/>Compounding impact.</SectionTitle><div className="experience-card"><div><span>2024 — PRESENT</span><b>Informaticae Technology</b><small>Product engineering · AI platforms</small></div><div><h3>Senior Software Engineer</h3><p>Designing and delivering backend systems for AI-powered education products, improving high-volume workflows and turning model capabilities into reliable product experiences.</p><div className="impact-row"><span><b>85%</b>less manual work</span><span><b>50%</b>faster APIs</span><span><b>80%</b>grading automation</span></div></div></div></section>
+    <section className="brief-section shell" id="projects">
+      <SectionHeading eyebrow="FEATURED PROJECTS" title="Live products. Real constraints." copy="Production-oriented systems spanning trading infrastructure, AI education, and academic operations."/>
+      <div className="featured-grid">{orderedProjects.map((project, index) => <motion.article className={`featured-card project-tone-${index + 1}`} key={project.slug} whileHover={{ y: -6 }}>
+        <div className="project-preview"><div className="preview-top"><span>0{index + 1}</span><b>LIVE PRODUCT</b></div><div className="preview-mark">{project.name.split(" ").map(word => word[0]).join("")}</div><div className="preview-lines"><i/><i/><i/></div></div>
+        <span className="project-eyebrow">{project.eyebrow}</span><h3>{project.name}</h3><p>{project.summary}</p><div className="tag-list">{project.tags.slice(0, 4).map(tag => <span key={tag}>{tag}</span>)}</div><div className="card-actions"><a href={project.liveUrl} target="_blank" rel="noreferrer">Visit Website <Arrow/></a><Link href={`/projects/${project.slug}`}>Case Study <Arrow/></Link></div>
+      </motion.article>)}</div>
+    </section>
 
-      <section className="section shell"><SectionTitle tag="06 / SELECTED WORK" copy="Live products shaped by user needs, system constraints, and measurable operational improvements.">More systems.<br/>Different constraints.</SectionTitle><div className="projects-grid">{projects.slice(1).map((project,index)=><motion.article className="project-card" key={project.slug} whileHover={{ y: -7 }}><div className={`project-art art-${index+1}`}><div className="project-art-meta"><span>0{index + 2}</span><b>{project.liveUrl ? "LIVE" : "CASE STUDY"}</b></div><strong>{project.name.split(" ").map(n=>n[0]).join("")}</strong><div/><div/></div><span>{project.eyebrow}</span><h3>{project.name}</h3><p>{project.summary}</p><div className="tag-list">{project.tags.slice(0,3).map(t=><span key={t}>{t}</span>)}</div><div className="card-actions">{project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noreferrer">Visit live product <ArrowIcon/></a>}<Link href={`/projects/${project.slug}`}>Case study <ArrowIcon/></Link></div></motion.article>)}</div></section>
+    <section className="brief-section kuberav-case" id="case-study"><div className="shell">
+      <SectionHeading eyebrow="KUBERAV CASE STUDY" title="A trading control plane built for reality." copy="A personal algorithmic trading platform bringing live data, execution, automation, and risk controls into one dashboard."/>
+      <div className="case-layout"><div className="case-copy"><div className="case-block"><span>01 / PROBLEM</span><h3>Fragmented trading workflows.</h3><p>Traders need a centralized platform to manage live market data, broker orders, positions, automated strategies, and risk from one dashboard.</p></div><div className="case-block"><span>02 / SOLUTION</span><h3>One real-time operating layer.</h3><p>Kuberav combines live market watch, order execution, paper trading, strategy automation, WebSocket updates, broker integration, and admin controls.</p></div><div className="case-result"><b>RESULT</b><p>A production-style platform demonstrating real-time backend engineering, API integration, authentication, order management, and automation logic.</p></div><div className="project-links"><a className="button primary" href="https://kuberav.com/" target="_blank" rel="noreferrer">Visit Kuberav <Arrow/></a><Link className="button ghost" href="/projects/kuberav">View Full Case Study</Link></div></div>
+      <div className="case-architecture"><div className="architecture-stack">{["Frontend Dashboard", "FastAPI Backend", "PostgreSQL Database", "Broker API Integration", "Trading Engine", "WebSocket Updates"].map((item, index) => <div key={item}><span>0{index + 1}</span><b>{item}</b>{index < 5 && <i>↓</i>}</div>)}</div><div className="case-features">{kuberavFeatures.map(feature => <span key={feature}><i>✓</i>{feature}</span>)}</div></div></div>
+    </div></section>
 
-      <section className="section shell proof"><SectionTitle tag="07 / PROOF OF WORK">Numbers that tell<br/>the useful part.</SectionTitle><div className="proof-grid"><div><b>85<sup>%</sup></b><p>Reduction in manual operational work through thoughtful automation.</p></div><div><b>50<sup>%</sup></b><p>API performance improvement across critical application paths.</p></div><div><b>80<sup>%</sup></b><p>Grading workflows automated while preserving educator control.</p></div><div><b>3<sup>+</sup></b><p>Years turning complex requirements into production software.</p></div></div></section>
+    <section className="brief-section shell" id="skills">
+      <SectionHeading eyebrow="TECHNICAL SKILLS" title="A practical production toolkit." copy="Tools selected for maintainability, performance, and predictable delivery."/>
+      <div className="skill-groups">{skillGroups.map(([group, items], index) => <motion.div className="skill-group" key={group} whileHover={{ y: -4 }}><div><span>0{index + 1}</span><h3>{group}</h3></div><div>{items.map(item => <b key={item}>{item}</b>)}</div></motion.div>)}</div>
+    </section>
 
-      <section className="section contact shell" id="contact"><div className="contact-card"><span>LET’S BUILD WHAT’S NEXT</span><h2>Have a hard backend problem?<br/><em>I’d like to hear it.</em></h2><p>I’m interested in Python backend, FastAPI, platform, and senior software engineering roles where reliability and product judgment matter.</p><a className="button primary" href="https://github.com/0Bishal7" target="_blank" rel="noreferrer">Connect on GitHub <ArrowIcon/></a></div></section>
-      <footer className="footer shell"><a className="logo" href="#top"><span>BR</span><div>Bishal Roy<small>Backend Systems Engineer</small></div></a><p>Built with Next.js, TypeScript &amp; Framer Motion.</p><div><a href="https://github.com/0Bishal7" target="_blank" rel="noreferrer">GitHub</a><a href="#contact">LinkedIn</a><a href="#top">Back to top ↑</a></div></footer>
-      <AnimatePresence>{terminal && <Terminal close={() => setTerminal(false)} />}</AnimatePresence>
-    </main>
-  );
+    <section className="brief-section achievements section-tint"><div className="shell">
+      <SectionHeading eyebrow="ACHIEVEMENTS" title="Numbers behind the work."/>
+      <div className="achievement-grid">{achievements.map(([number, label], index) => <motion.div key={label} initial={{ opacity: 0, scale: .96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: index * .06 }}><b>{number}</b><span>{label}</span></motion.div>)}</div>
+    </div></section>
+
+    <section className="brief-section shell" id="education">
+      <SectionHeading eyebrow="EDUCATION & CERTIFICATION" title="Foundations and continued learning."/>
+      <div className="education-grid"><article><span>2019 - 2023</span><h3>B.Tech in Computer Science Engineering</h3><p>Gargi Memorial Institute of Technology, Kolkata</p><b>GPA: 8.5</b></article><article><span>JAN 2025 - MAR 2026</span><h3>Advanced Certification in Applied Data Science, Machine Learning and IoT</h3><p>Indian Institute of Technology Guwahati</p><b>Advanced Certification</b></article></div>
+    </section>
+
+    <section className="resume-banner shell"><div><span>RESUME</span><h2>Want the concise version?</h2><p>Download a recruiter-friendly overview of my experience, skills, education, and product work.</p></div><a className="button primary" href="/Bishal-Roy-Resume.pdf" download>Download Resume <Arrow/></a></section>
+
+    <section className="brief-section contact-section" id="contact"><div className="shell contact-layout"><div className="contact-copy"><span>LET&apos;S WORK TOGETHER</span><h2>Let&apos;s build something<br/><em>scalable together.</em></h2><p>I&apos;m interested in backend, platform, and senior software engineering opportunities where reliability and product judgment matter.</p><div className="contact-details"><a href="mailto:roybishal200189@gmail.com"><b>Email</b>roybishal200189@gmail.com</a><a href="tel:+918942943435"><b>Mobile</b>+91 89429 43435</a><span><b>Location</b>Kolkata, India</span><a href="https://github.com/0Bishal7" target="_blank" rel="noreferrer"><b>GitHub</b>0Bishal7 ↗</a></div></div>
+      <form className="contact-form" onSubmit={sendMessage}><div><label htmlFor="name">Your name</label><input id="name" name="name" required placeholder="Jane Smith"/></div><div><label htmlFor="email">Email address</label><input id="email" name="email" type="email" required placeholder="jane@company.com"/></div><div><label htmlFor="message">How can I help?</label><textarea id="message" name="message" required rows={5} placeholder="Tell me about the role or project..."/></div><button className="button primary" type="submit">Send Message <Arrow/></button><small>This opens your email app. No data is stored.</small></form>
+    </div></section>
+
+    <footer className="footer shell brief-footer"><a className="logo" href="#home"><span>BR</span><div>Bishal Roy<small>Senior Software Engineer</small></div></a><p>Python backend systems, AI platforms, and real-time products.</p><div><a href="mailto:roybishal200189@gmail.com">Email</a><a href="https://github.com/0Bishal7" target="_blank" rel="noreferrer">GitHub</a><a href="#home">Back to top ↑</a></div></footer>
+  </main>;
 }

@@ -1,0 +1,141 @@
+%PDF-1.4
+% resume
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique >>
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 4362 >>
+stream
+BT /F2 28 Tf 0.059 0.090 0.165 rg 47 786 Td (BISHAL ROY) Tj ET
+BT /F2 13 Tf 0.145 0.388 0.922 rg 47 762 Td (SENIOR SOFTWARE ENGINEER) Tj ET
+BT /F1 9 Tf 0.278 0.333 0.412 rg 47 741 Td (Python Backend | FastAPI | Django | AI Platforms | Real-Time Trading Systems) Tj ET
+BT /F1 8 Tf 0.392 0.455 0.545 rg 47 720 Td (Kolkata, India | +91 89429 43435 | roybishal200189@gmail.com | github.com/0Bishal7) Tj ET
+0.886 0.910 0.941 RG 0.7 w 47 706 m 548 706 l S
+BT /F2 10 Tf 0.145 0.388 0.922 rg 47 681 Td (PROFESSIONAL SUMMARY) Tj ET
+BT /F1 9 Tf 0.059 0.090 0.165 rg 47 662 Td (Python backend and full-stack developer with 3+ years of experience building scalable APIs, AI-driven) Tj ET
+BT /F1 9 Tf 0.059 0.090 0.165 rg 47 648 Td (education platforms, automation systems, and real-time trading applications. Experienced in FastAPI, Django,) Tj ET
+BT /F1 9 Tf 0.059 0.090 0.165 rg 47 634 Td (PostgreSQL, WebSockets, Docker, authentication, performance optimization, and production software.) Tj ET
+BT /F2 10 Tf 0.145 0.388 0.922 rg 47 602 Td (CORE SKILLS) Tj ET
+BT /F2 8.5 Tf 0.059 0.090 0.165 rg 47 582 Td (Backend) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 125 582 Td (Python, FastAPI, Django, Flask, REST APIs, WebSockets) Tj ET
+BT /F2 8.5 Tf 0.059 0.090 0.165 rg 47 565 Td (Database) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 125 565 Td (PostgreSQL, SQLAlchemy, SQL, Redis) Tj ET
+BT /F2 8.5 Tf 0.059 0.090 0.165 rg 47 548 Td (Security) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 125 548 Td (JWT, OAuth, secure login, role-based access) Tj ET
+BT /F2 8.5 Tf 0.059 0.090 0.165 rg 47 531 Td (DevOps) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 125 531 Td (Docker, Git, AWS, Linux, CI/CD) Tj ET
+BT /F2 8.5 Tf 0.059 0.090 0.165 rg 47 514 Td (AI / Data) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 125 514 Td (Pandas, NumPy, TensorFlow, PyTorch, Matplotlib) Tj ET
+BT /F2 10 Tf 0.145 0.388 0.922 rg 47 480 Td (PROFESSIONAL EXPERIENCE) Tj ET
+BT /F2 11 Tf 0.059 0.090 0.165 rg 47 458 Td (Senior Software Engineer) Tj ET
+BT /F2 8.5 Tf 0.145 0.388 0.922 rg 47 442 Td (INFORMATICAE TECHNOLOGY PVT. LTD.) Tj ET
+BT /F1 8 Tf 0.392 0.455 0.545 rg 410 458 Td (Jan 2024 - Present) Tj ET
+BT /F1 8 Tf 0.392 0.455 0.545 rg 459 442 Td (Kolkata, India) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 57 421 Td (- Built AI-driven teacher modules for assignment generation and academic workflow automation.) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 57 405 Td (- Reduced manual preparation effort by 85% and automated answer checking and student analytics.) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 57 389 Td (- Built multilingual, multi-difficulty assessment configuration with weighted scoring logic.) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 57 373 Td (- Mentored junior developers and improved code quality through reviews and optimization.) Tj ET
+0.886 0.910 0.941 RG 0.7 w 47 351 m 548 351 l S
+BT /F2 11 Tf 0.059 0.090 0.165 rg 47 329 Td (Software Engineer) Tj ET
+BT /F2 8.5 Tf 0.145 0.388 0.922 rg 47 313 Td (INFORMATICAE TECHNOLOGY PVT. LTD.) Tj ET
+BT /F1 8 Tf 0.392 0.455 0.545 rg 410 329 Td (Aug 2023 - Dec 2024) Tj ET
+BT /F1 8 Tf 0.392 0.455 0.545 rg 459 313 Td (Kolkata, India) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 57 292 Td (- Built scalable REST APIs using FastAPI for Hello Teacher AI.) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 57 276 Td (- Implemented secure authentication and authorization using JWT and OAuth.) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 57 260 Td (- Optimized SQL queries, indexing, and caching, improving API response time by 50%.) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 57 244 Td (- Worked with Docker and CI/CD pipelines for reliable deployment and testing.) Tj ET
+0.886 0.910 0.941 RG 0.7 w 47 221 m 548 221 l S
+BT /F2 11 Tf 0.059 0.090 0.165 rg 47 199 Td (Backend Developer Intern) Tj ET
+BT /F2 8.5 Tf 0.145 0.388 0.922 rg 47 183 Td (RUNTIME SOLUTIONS) Tj ET
+BT /F1 8 Tf 0.392 0.455 0.545 rg 421 199 Td (Mar 2023 - Aug 2023) Tj ET
+BT /F1 8 Tf 0.392 0.455 0.545 rg 459 183 Td (Kolkata, India) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 57 162 Td (- Built scalable web applications using Django and Flask.) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 57 146 Td (- Designed optimized relational database schemas and implemented Redis caching.) Tj ET
+BT /F1 7 Tf 0.392 0.455 0.545 rg 47 44 Td (Bishal Roy | Resume) Tj ET
+BT /F1 7 Tf 0.392 0.455 0.545 rg 526 44 Td (1 / 2) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 4008 >>
+stream
+BT /F2 18 Tf 0.059 0.090 0.165 rg 47 790 Td (SELECTED PRODUCT WORK) Tj ET
+0.886 0.910 0.941 RG 0.7 w 47 775 m 548 775 l S
+BT /F2 12 Tf 0.145 0.388 0.922 rg 47 744 Td (KUBERAV - ALGORITHMIC TRADING PLATFORM) Tj ET
+BT /F1 8 Tf 0.392 0.455 0.545 rg 436 744 Td (kuberav.com) Tj ET
+BT /F1 9 Tf 0.059 0.090 0.165 rg 47 724 Td (Personal web-based trading platform for live market data, broker orders, strategy automation,) Tj ET
+BT /F1 9 Tf 0.059 0.090 0.165 rg 47 710 Td (paper trading, options, risk controls, and real-time WebSocket updates from one dashboard.) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 57 687 Td (- Live and paper trading, broker integration, positions, order book, and trade history) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 57 671 Td (- Stop-loss, targets, trailing exits, charts, option chain, and webhook automation) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 57 655 Td (- FastAPI, Python, SQLAlchemy, PostgreSQL, REST APIs, WebSockets) Tj ET
+BT /F2 12 Tf 0.145 0.388 0.922 rg 47 617 Td (HELLO TEACHER AI - AI EDUCATION PLATFORM) Tj ET
+BT /F1 8 Tf 0.392 0.455 0.545 rg 430 617 Td (hello-teacher.ai) Tj ET
+BT /F1 9 Tf 0.059 0.090 0.165 rg 47 597 Td (Contributed scalable backend APIs, secure authentication, teacher assignment workflows, subject) Tj ET
+BT /F1 9 Tf 0.059 0.090 0.165 rg 47 583 Td (management, and model question generation for an AI-powered education platform.) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 57 560 Td (- Python, FastAPI, PostgreSQL, JWT, OAuth, REST APIs, Docker) Tj ET
+BT /F2 12 Tf 0.145 0.388 0.922 rg 47 522 Td (ACADEMICAE SCHOOLS - ACADEMIC PLATFORM) Tj ET
+BT /F1 8 Tf 0.392 0.455 0.545 rg 424 522 Td (aps.academicae.com) Tj ET
+BT /F1 9 Tf 0.059 0.090 0.165 rg 47 502 Td (Contributed dynamic assessment configuration, automated answer checking, student analytics,) Tj ET
+BT /F1 9 Tf 0.059 0.090 0.165 rg 47 488 Td (multilingual content, difficulty logic, and academic workflow automation.) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 57 465 Td (- Python, FastAPI, PostgreSQL, SQL, REST APIs, Docker) Tj ET
+BT /F2 10 Tf 0.145 0.388 0.922 rg 47 426 Td (MEASURABLE IMPACT) Tj ET
+BT /F2 18 Tf 0.059 0.090 0.165 rg 47 400 Td (85%) Tj ET
+BT /F1 8 Tf 0.278 0.333 0.412 rg 47 386 Td (manual effort reduced) Tj ET
+BT /F2 18 Tf 0.059 0.090 0.165 rg 178 400 Td (80%) Tj ET
+BT /F1 8 Tf 0.278 0.333 0.412 rg 178 386 Td (grading time reduced) Tj ET
+BT /F2 18 Tf 0.059 0.090 0.165 rg 309 400 Td (50%) Tj ET
+BT /F1 8 Tf 0.278 0.333 0.412 rg 309 386 Td (API response improved) Tj ET
+BT /F2 18 Tf 0.059 0.090 0.165 rg 440 400 Td (3+) Tj ET
+BT /F1 8 Tf 0.278 0.333 0.412 rg 440 386 Td (years experience) Tj ET
+BT /F2 10 Tf 0.145 0.388 0.922 rg 47 344 Td (EDUCATION) Tj ET
+BT /F2 10 Tf 0.059 0.090 0.165 rg 47 321 Td (B.Tech in Computer Science Engineering) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 47 305 Td (Gargi Memorial Institute of Technology, Kolkata | GPA: 8.5 | 2019 - 2023) Tj ET
+BT /F2 10 Tf 0.145 0.388 0.922 rg 47 267 Td (CERTIFICATION) Tj ET
+BT /F2 10 Tf 0.059 0.090 0.165 rg 47 244 Td (Advanced Certification in Applied Data Science, Machine Learning and IoT) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 47 228 Td (Indian Institute of Technology Guwahati | Jan 2025 - Mar 2026) Tj ET
+BT /F2 10 Tf 0.145 0.388 0.922 rg 47 188 Td (ADDITIONAL) Tj ET
+BT /F2 8.5 Tf 0.059 0.090 0.165 rg 47 167 Td (Frontend) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 125 167 Td (HTML, CSS, JavaScript, React) Tj ET
+BT /F2 8.5 Tf 0.059 0.090 0.165 rg 47 150 Td (Focus) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 125 150 Td (Backend architecture, performance, automation, and product engineering) Tj ET
+0.886 0.910 0.941 RG 0.7 w 47 106 m 548 106 l S
+BT /F2 11 Tf 0.059 0.090 0.165 rg 47 82 Td (Open to backend, platform, and senior software engineering opportunities.) Tj ET
+BT /F2 9 Tf 0.145 0.388 0.922 rg 47 65 Td (roybishal200189@gmail.com | github.com/0Bishal7) Tj ET
+BT /F1 7 Tf 0.392 0.455 0.545 rg 47 44 Td (Bishal Roy | Resume) Tj ET
+BT /F1 7 Tf 0.392 0.455 0.545 rg 526 44 Td (2 / 2) Tj ET
+endstream
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000018 00000 n 
+0000000067 00000 n 
+0000000130 00000 n 
+0000000200 00000 n 
+0000000275 00000 n 
+0000000353 00000 n 
+0000000499 00000 n 
+0000004913 00000 n 
+0000005059 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+9119
+%%EOF
